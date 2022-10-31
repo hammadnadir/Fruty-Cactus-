@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn:hover{
+    background-color: rgb(29, 170, 29) ;
+    box-shadow: 2px 1px 4px 2px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+body{
+    font-family: '', sans-serif;}
+.sliders{
+    /* font-family: 'Fredoka One', cursive; */
+    font-family: 'Teko', sans-serif;
+}
+.fnt{
+    font-family: 'Teko', sans-serif;
+    /* font-family: 'Fredoka One', cursive; */
+}
+
+.header{
+    background-color: black;
+}
+.menus{
+    font-family: 'Teko', sans-serif;}
+
+.footer{font-family: 'Teko', sans-serif;}
+.about{font-family: 'Teko', sans-serif;}
+/* .btn{
+    display: none;
+    margin-top: -350px;
+    position: absolute;
+    
+    
+  }
+  .card:hover .btn{
+
+    /* transform: translatey(0); */
+    /* display: block; */
+    /* margin-left: 30%;
+    color: white;
+    background-color: rgb(63, 63, 238);
+    
+    
+  }
+  .card img:hover { */
+    /* filter: blur(2px); */
+  /* } */ 
+ 
+.green{
+    
+background-image:url(/images/menugreen.png);
+width: 100%;
+transition-duration: 1s ;
+/* transition: ease-in; */
+}
+.blue{
+    background-image: url(/images/menubar.png);
+    width: 100%;
+    transition-duration: 1s;
+
+}
+
+
+.red{
+    background-image: url(/images/menured2.png);
+    width: 100%;
+    transition-duration: 1s; 
+}
+.darkgreen{
+    background-image: url(/images/menudarkgreen.png);
+    width: 100%;
+    transition-duration: 1s;  
+}
+.lightblue{
+    background-image: url(/images/menublue2.png);
+    width: 100%;
+    transition-duration: 1s;  
+}
+
+
+
+.orange{
+    background-image: url(/images/menuoranges.png);
+    width: 100%;
+    transition-duration: 1s ;
+}
+.greenend{
+    background-image: url(/images/menugreenend.png);
+    width: 100%;
+    transition-duration: 1s ;
+}

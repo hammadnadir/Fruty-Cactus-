@@ -40,6 +40,7 @@ export default function contact() {
         // if (res?.payload?.success) {
           setInputData({firstname:"",email:"",message:""});
           setError({firstname:"",email:"",message:""});
+          toast(<RequestMessage message="Message sent successfully!" />);
         // }
       });
     }

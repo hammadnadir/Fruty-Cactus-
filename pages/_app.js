@@ -5,6 +5,7 @@ import { combinedReducer } from "../redux/rootReducer";
 import { createStore } from "@reduxjs/toolkit";
 import {store} from "../store";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, ...pageProps }) {
 

@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <div>
       <Topbtn />
-      <div className="bg-[url('/footer/Footerbackground.png')] bg-cover  ">
-        <div className=" mt-[-40px] flex md:flex-row items-center h-1/2 text-center md:text-start  flex-col text-green-700 justify-between  md:items-start px-[60px] max-w-[1600px] mx-auto footer ">
+      <div className="bg-[url('/footer/Footerbackground.png')] bg-cover">
+        <div className="mt-[-40px] grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 items-center h-1/2 text-center md:text-start flex-col text-green-700 justify-between  md:items-start px-[60px] max-w-[1600px] mx-auto footer ">
           <div className="p-5 ">
             <ul className=" items-center flex flex-col">
               <div className="max-w-[200px] pt-[30px] md:pt-16 ">
@@ -19,7 +19,6 @@ export default function Footer() {
                 <img className="cursor-pointer" src={MainData[7].footerlogo} alt="about-img"  />
               </Link>
               </div>
-
               <div className="text-center text-[18px]  md:text-2xl text-black md:pb-10">
                 <p>{MainData[7].description1}</p>
                 <p>{MainData[7].description2}</p>

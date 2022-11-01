@@ -34,13 +34,11 @@ export default function contact() {
       console.log(err);
     } else {
       console.log(inputData);
-      // setError({firstname:"",email:"",message:""});
-      // setInputData({firstname:"",email:"",message:""})
       dispatch(sentContactRequest(value)).then((res) => {
         // if (res?.payload?.success) {
-          setInputData({firstname:"",email:"",message:""});
-          setError({firstname:"",email:"",message:""});
-          toast(<RequestMessage message="Message sent successfully!" />);
+        setInputData({ firstname: "", email: "", message: "" });
+        setError({ firstname: "", email: "", message: "" });
+        toast(<RequestMessage message="Message sent successfully!" />);
         // }
       });
     }
@@ -54,74 +52,73 @@ export default function contact() {
     <>
       <div className="bg-[#d8aa6e]  md:pb-[70px]  about">
         <Tripletap_masterblend_navbar />
-        <div className="pt-[130px] md:pt-[180px] text-center text-5xl about ">
-          {Contactus[0].heading}
-        </div>
-
-        <div className="bg-[#76a641] my-14 mx-auto max-w-5xl h-[600px] flex  ">
-          {/* image */}
-
-          <div className="hidden md:flex md:items-center md:justify-center  md:p-10">
-            <img className="" src={Contactus[0].img} alt="contact-us" />
+        <div className="py-[40px]">
+          <div className="pt-[130px] md:pt-[180px] text-center text-5xl about ">
+            {Contactus[0].heading}
           </div>
 
-          {/* right secction */}
-          <div className="w-[535px] mx-auto rounded-none bg-white md:w-[573px]  md:rounded-tl-[51px] md:rounded-bl-[51px]">
-            <div className="  items-center gap-8 mt-12 hidden md:block">
-              <img className="ml-10 w-[150px]" src={Contactus[0].logo} alt="contact-us"/>
+          <div className="bg-none lg:bg-[#76a641] my-14 mx-auto max-w-5xl h-[600px] flex items-center">
+            {/* image */}
+
+            <div className="hidden lg:flex md:items-center md:justify-center  md:p-10">
+              <img className="" src={Contactus[0].img} alt="contact-us" />
             </div>
 
-            <div className="text-3xl mt-[64px] pl-[106px] pt-[100px] md:pt-[0px]">
-              {Contactus[0].tittle}
+            {/* right secction */}
+            <div className="mx-auto bg-white md:w-[573px] lg:rounded-tl-[51px] lg:rounded-bl-[51px] lg:rounded-tr-[0px] lg:rounded-br-[0px] rounded-3xl h-full items-center flex">
+              <div className="sm:px-[120px] px-[30px] items-center text-center m-auto">
+              <div className="">
+                  <img
+                    className="w-[150px] m-auto pb-[20px]"
+                    src={Contactus[0].logo}
+                    alt="contact-us"
+                  />
+                <div className="text-3xl  pb-[20px]">{Contactus[0].tittle}</div>
+                <form onSubmit={handleSubmit}>
+                  <Contact_text
+                    label={"Enter Full Name"}
+                    name={"firstname"}
+                    handleChange={handleChange}
+                    value={inputData.firstname}
+                    type="text"
+                  />
+                  <p className="">{error.firstname}</p>
+                  <Contact_text
+                    label={"Enter Email Address"}
+                    name={"email"}
+                    handleChange={handleChange}
+                    value={inputData.email}
+                    type="email"
+                  />
+                  <p className="">{error.email}</p>
+
+                  <div className="rounded-md m-auto mb-[20px]">
+                    <textarea
+                      className="border h-[100px] w-full  py-[10px] px-[15px] rounded-md bg-gray-100 focus:outline-none "
+                      name="message"
+                      id=""
+                      cols="48"
+                      rows="3"
+                      type="text"
+                      placeholder="Enter Your Messgae"
+                      onChange={handleChange}
+                      value={inputData.message}
+                    ></textarea>
+                    <p className="">{error.message}</p>
+                  </div>
+
+                  <div>
+                    <button
+                      className="outline outline-slate-200 outline-1 hover:bg-[#699BF7] hover:text-white h-[41px] rounded-md text-sm w-full"
+                      type="submit"
+                    >
+                      {Contactus[0].btn}
+                    </button>
+                  </div>
+                </form>
+              </div>
+              </div>
             </div>
-            <form onSubmit={handleSubmit}>
-              <Contact_text
-                label={"Enter Full Name"}
-                name={"firstname"}
-                handleChange={handleChange}
-                value={inputData.firstname}
-                type="text"
-              />
-              <p className="ml-[23px]  sm:ml-[106px] md:ml-[106px]">
-                {error.firstname}
-              </p>
-              <Contact_text
-                label={"Enter Email Address"}
-                name={"email"}
-                handleChange={handleChange}
-                value={inputData.email}
-                type="email"
-              />
-              <p className="ml-[23px]  sm:ml-[106px] md:ml-[106px]">
-                {error.email}
-              </p>
-
-              <div className="   rounded-md ml-[23px] mr-[23px] sm:ml-[106px] md:ml-[103px] mt-[16px] w-[328px] h-[41px] px-3">
-                <textarea
-                  className="border pl-1"
-                  name="message"
-                  id=""
-                  cols="48"
-                  rows="3"
-                  type="text"
-                  placeholder="Enter Your Messgae"
-                  onChange={handleChange}
-                  value={inputData.message}
-                ></textarea>
-                <p className="ml-[23px]  sm:ml-[106px] md:ml-[106px]">
-                  {error.message}
-                </p>
-              </div>
-
-              <div>
-                <button
-                  className="ml-[23px] mr-[23px] sm:ml-[106px] md:ml-[106px] mt-[70px] outline outline-slate-200 outline-1 hover:bg-[#699BF7]  w-[328px] h-[41px] rounded-md text-sm"
-                  type="submit"
-                >
-                  {Contactus[0].btn}
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </div>

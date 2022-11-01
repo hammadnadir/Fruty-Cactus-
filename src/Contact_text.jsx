@@ -8,7 +8,7 @@ const Contact_text = ({ label, name, value, handleChange, ...props }) => {
         name={name}
         onChange={handleChange}
         {...props}
-        className="bg-gray-100 focus:outline-none rounded-md ml-[23px] mr-[23px] sm:ml-[106px] md:ml-[106px] mt-[16px] w-[328px] h-[41px] px-3"
+        className="bg-gray-100 focus:outline-none rounded-md h-[41px] mb-[20px] w-full px-[15px]"
         placeholder={label}
         required
       />

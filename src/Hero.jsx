@@ -3,9 +3,13 @@ import Logo from "./Logo";
 import myheader from "../imagePath.json";
 import Fade from "react-reveal/Fade";
 import { MainData } from "../data";
+import { useDispatch } from "react-redux";
 
-console.log(myheader.header1);
+// console.log(myheader.header1);
 export default function Hero() {
+
+  const dispatch = useDispatch();
+
   return (
     <div className='bg-[url("/herosection_image/HeaderBannerBackground1.png")] backcard1 bg-cover    bg-no-repeat '>
       <div className="  flex justify-center  ">

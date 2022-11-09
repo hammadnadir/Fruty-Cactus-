@@ -6,7 +6,11 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Topbtn from "./Topbtn";
 import { MainData } from "../data";
+import { useDispatch } from "react-redux";
 export default function Footer() {
+
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Topbtn />
@@ -115,24 +119,24 @@ export default function Footer() {
               <li className="    text-[22px] md:text-2xl  hover:text-black cursor-pointer md:pt-16 pt-8">
                 Social Links
               </li>
-              <div className="flex gap-8 pb-5 justify-center pt-2">
+              <div className="flex pt-3">
                 <Link href="https://www.instagram.com/" target="_blank">
-                <a target="_blank">
+                <a target="_blank"  className="pr-[25px]">
                   <FaInstagram className=" text-[18px] md:text-2xl cursor-pointer hover:text-yellow-600" />
                   </a>
                 </Link>
                 <Link href="https://www.twitter.com/">
-                <a target="_blank">
+                <a target="_blank"  className="pr-[25px]">
                   <FaTwitter className=" text-[18px] md:text-2xl cursor-pointer hover:text-blue-600" />
                   </a>
                 </Link>
                 <Link href="https://www.linkedin.com/">
-                <a target="_blank">
+                <a target="_blank"  className="pr-[25px]">
                   <FaLinkedin className=" text-[18px] md:text-2xl cursor-pointer hover:text-blue-600" />
                   </a>
                 </Link>
                 <Link href="https://www.youtube.com/">
-                <a target="_blank">
+                <a target="_blank"  className="pr-[25px]">
                   <FaYoutube className=" text-[18px] md:text-2xl cursor-pointer hover:text-red-600" />
                 </a>
                 </Link>

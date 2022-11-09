@@ -1,7 +1,9 @@
 import React from "react";
+import { getPageData } from "../redux/pagedata";
 import Footer from "../src/Footer";
 import TripleTap_masterblend_cards from "../src/TripleTap_masterblend_cards";
 import Tripletap_masterblend_navbar from "../src/Tripletap_masterblend_navbar";
+import { wrapper } from "../store";
 
 export default function tripletap_masterblend_categories() {
   return (
@@ -25,3 +27,7 @@ export default function tripletap_masterblend_categories() {
     </div>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

@@ -1,7 +1,9 @@
 import React from "react";
+import { getPageData } from "../redux/pagedata";
 import Footer from "../src/Footer";
 import Tripletap_hhc_cards from "../src/Tripletap_hhc_cards";
 import Tripletap_hhc_navbar from "../src/Tripletap_hhc_navbar";
+import { wrapper } from "../store";
 export default function tripletap_hhc_categories() {
   return (
     <div>
@@ -24,3 +26,7 @@ export default function tripletap_hhc_categories() {
     </div>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

@@ -16,8 +16,7 @@ function RequestMessage({ icon = "M4.5 12.75l6 6 9-13.5", message ,color }) {
           strokeLinejoin="round"
           d={icon}
         />
-      </svg>
-      <p className={color}>{message}</p>
+      </svg>&nbsp;&nbsp;&nbsp;&nbsp;<p className={color}>{message}</p>
     </div>
   );
 }

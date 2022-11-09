@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
 import { MainData } from "../data";
+import { useDispatch } from "react-redux";
 export default function Logo() {
   const [green, setGreen] = useState(false);
 
@@ -13,6 +14,8 @@ export default function Logo() {
   const [blue, setBlue] = useState(false);
   const [greenend, setgreenend] = useState(false);
   const [show, setShow] = useState(true);
+
+  const dispatch = useDispatch();
 
   var maincl =
     "   navcolor  w-[100%] bg-cover md:mt-[-40px]   md:h-[210px] bg-no-repeat fixed z-10";
@@ -37,7 +40,7 @@ export default function Logo() {
   var sc_width = size.width;
   var sc_height = size.height;
   sc_height = sc_height - sc_height * 0.1;
-  console.log(sc_height);
+  // console.log(sc_height);
 
   const changebackground = () => {
     if (document.querySelector(".backcard1") !== null) {
@@ -74,10 +77,10 @@ export default function Logo() {
       threshold = sc_height * tratio;
 
       if (rbackcard1.y <= 0 && rbackcard1.bottom > threshold) {
-        console.log("green");
+        // console.log("green");
         setGreen(true);
       } else if (rbackcard2.y <= xthreshold && rbackcard2.bottom > threshold) {
-        console.log("red");
+        // console.log("red");
 
         setGreen(false);
 
@@ -140,10 +143,10 @@ export default function Logo() {
   }
 
   if (typeof window !== "undefined") {
-    console.log("You are on the browser");
+    // console.log("You are on the browser");
     window.addEventListener("scroll", changebackground);
   } else {
-    console.log("You are on the server");
+    // console.log("You are on the server");
   }
 
   return (

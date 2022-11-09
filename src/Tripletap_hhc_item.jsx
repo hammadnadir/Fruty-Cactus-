@@ -3,7 +3,11 @@ import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
 import { MainData } from "../data";
+import { useDispatch } from "react-redux";
 export default function Tripletap_hhc_item() {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="flex flex-col-reverse md:flex-row items-center  justify-between max-w-[1258px] mx-auto md:pt-[125px] md:pb-[125px] ">

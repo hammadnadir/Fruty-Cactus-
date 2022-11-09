@@ -2,6 +2,8 @@ import React from "react";
 import Twog_masterblend_cards from "../src/Twog_masterblend_cards";
 import Footer from "../src/Footer";
 import Two_g_masterblend_navbar from "../src/Two_g_masterblend_navbar";
+import { getPageData } from "../redux/pagedata";
+import { wrapper } from "../store";
 export default function twog_masterblend() {
   return (
     <div>
@@ -24,3 +26,7 @@ export default function twog_masterblend() {
     </div>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

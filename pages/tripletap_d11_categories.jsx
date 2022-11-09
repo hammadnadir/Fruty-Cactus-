@@ -1,8 +1,10 @@
 import React from "react";
+import { getPageData } from "../redux/pagedata";
 
 import Footer from "../src/Footer";
 import Tripletap_D11_cards from "../src/Tripletap_D11_cards";
 import Tripletap_d11_navbar from "../src/Tripletap_d11_navbar";
+import { wrapper } from "../store";
 export default function tripletap_d11_categories() {
   return (
     <div>
@@ -25,3 +27,7 @@ export default function tripletap_d11_categories() {
     </div>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

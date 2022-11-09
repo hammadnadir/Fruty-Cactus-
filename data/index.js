@@ -416,6 +416,7 @@ export const MainData = [
     logo: "/images/Fruty Cactus Logo 1-01.png",
   },
 ];
+
 //  ABOUT US PAGE
 export const Aboutus = [
   {
@@ -433,6 +434,7 @@ export const Aboutus = [
     img2: "/herosection_image/hero2.png",
   },
 ];
+
 // CONTACT US PAGE
 export const Contactus = [
   {

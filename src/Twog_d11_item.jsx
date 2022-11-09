@@ -3,8 +3,12 @@ import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal/Slide";
 import Link from "next/link";
 import { MainData } from "../data";
+import { useDispatch } from "react-redux";
 
 export default function Twog_d11_item() {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="flex flex-col-reverse md:flex-row  items-center justify-between max-w-[1258px] mx-auto mt-[-40px]  md:pb-[290px] ">
@@ -15,7 +19,7 @@ export default function Twog_d11_item() {
               <img
                 className="lg:max-w-[300px] md:max-w-[200px] sm:max-w-[200px] max-w-[200px]  "
                 src={MainData[1].titleimg}
-                alt="about-img" 
+                alt="about-img"
               />
             </div>
 
@@ -42,7 +46,7 @@ export default function Twog_d11_item() {
           <img
             className="md:max-w-[400px] lg:w-[550px] max-w-[250px] md:mt-[200px] mt-[90px] mb-[50px] md:mb-[0px]"
             src={MainData[1].pdimg}
-            alt="about-img" 
+            alt="about-img"
           />
         </Zoom>
       </div>

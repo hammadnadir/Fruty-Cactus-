@@ -7,6 +7,8 @@ import Image from "next/image";
 
 import Twog_delta11_cards from "../src/Twog_delta11_cards";
 import Two_g_delta11_navbar from "../src/Two_g_delta11_navbar";
+import { getPageData } from "../redux/pagedata";
+import { wrapper } from "../store";
 
 export default function twog_delta11_catergories() {
   return (
@@ -32,3 +34,7 @@ export default function twog_delta11_catergories() {
     </div>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

@@ -3,7 +3,11 @@ import Link from "next/link";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import { MainData } from "../data";
+import { useDispatch } from "react-redux";
 export default function Triplrtap_masterblend() {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="flex flex-col md:flex-row items-center  justify-between max-w-[1258px] mx-auto md:pt-[100px] md:pb-[100px]">

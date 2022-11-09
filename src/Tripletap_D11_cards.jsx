@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import Slide from "react-reveal/Slide";
 import { card5 } from "../data";
 
 export default function Tripletap_D11_cards() {
+
+  const dispatch = useDispatch();
   return (
     <>
       <div className="pb-[60px] ">

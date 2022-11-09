@@ -3,12 +3,13 @@ import React from "react";
 import Footer from "../src/Footer";
 import Tripletap_masterblend_navbar from "../src/Tripletap_masterblend_navbar";
 import { Aboutus } from "../data";
+import { getPageData } from "../redux/pagedata";
+import { wrapper } from "../store";
 export default function aboutus() {
   return (
     <>
       <div className=" bg-gradient-to-r from-[#f69c20] to-green-400 about">
         <Tripletap_masterblend_navbar />
-
         <div>
           <p className="text-center pt-[130px] md:pt-[180px] text-5xl">
             {Aboutus[0].heading}
@@ -51,3 +52,7 @@ export default function aboutus() {
     </>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

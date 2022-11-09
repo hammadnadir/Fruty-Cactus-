@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { sentContactRequest } from "../redux/contact";
 import RequestMessage from "../src/RequestMessage";
 import { toast } from "react-toastify";
+import { wrapper } from "../store";
+import { getPageData } from "../redux/pagedata";
 export default function contact() {
   const [inputData, setInputData] = UseState({});
   const [error, setError] = UseState({});
@@ -31,9 +33,9 @@ export default function contact() {
     }
     if (Object.keys(err).length > 0) {
       setError(err);
-      console.log(err);
+      // console.log(err);
     } else {
-      console.log(inputData);
+      // console.log(inputData);
       dispatch(sentContactRequest(value)).then((res) => {
         // if (res?.payload?.success) {
         setInputData({ firstname: "", email: "", message: "" });
@@ -126,3 +128,7 @@ export default function contact() {
     </>
   );
 }
+
+// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+//   await store.dispatch(getPageData());
+// });

@@ -2,6 +2,7 @@
   "name": "fruty-cactus",
   "version": "0.1.0",
   "private": true,
+  "proxy" :"http://dev.biztekapps.com:8051/storage/",
   "scripts": {
     "dev": "next dev",
     "build": "next build ",

@@ -1,12 +1,12 @@
-import "../styles/globals.css";
+import "../styles/globals.css"
 import { SessionProvider } from "next-auth/react";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { combinedReducer } from "../redux/rootReducer";
 import { createStore } from "@reduxjs/toolkit";
 import {store, wrapper} from "../store";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import "bootstrap-icons/font/bootstrap-icons.css";
+// import 'react-toastify/dist/ReactToastify.css';
+// import "bootstrap-icons/font/bootstrap-icons.css";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { setLoading } from "../redux/global";

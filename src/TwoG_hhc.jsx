@@ -3,7 +3,16 @@ import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
 import { MainData } from "../data";
+import { useEffect } from "react";
+import { useState } from "react";
 export default function TwoG_hhc() {
+  const [data ,setData]= useState([]);
+const getData = async () =>{
+const response = await fetch("http://dev.biztekapps.com:8051/api/home")
+}   
+  useEffect(()=>{
+getData();
+  },[])
   return (
     <>
       <div className="flex flex-col md:flex-row  items-center justify-between max-w-[1258px] mx-auto mt-[-40px]  md:pb-[290px] ">

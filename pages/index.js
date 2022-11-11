@@ -9,6 +9,7 @@ import Tripletap_d11 from "../src/Tripletap_d11";
 import { Provider } from "react-redux";
 import { wrapper } from "../store";
 import { getPageData } from "../redux/pagedata";
+import { sentDataRequest } from "../redux/home";
 // import { Store } from "@reduxjs/toolkit";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -34,6 +35,6 @@ export default function Home() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   await store.dispatch(getPageData());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  await store.dispatch(sentDataRequest());
+});

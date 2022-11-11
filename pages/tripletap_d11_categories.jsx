@@ -1,4 +1,5 @@
 import React from "react";
+import { sentDataRequest } from "../redux/home";
 import { getPageData } from "../redux/pagedata";
 
 import Footer from "../src/Footer";
@@ -28,6 +29,6 @@ export default function tripletap_d11_categories() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   await store.dispatch(getPageData());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  await store.dispatch(sentDataRequest());
+});

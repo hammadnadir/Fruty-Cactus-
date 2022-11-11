@@ -4,6 +4,7 @@ import Footer from "../src/Footer";
 import Two_g_masterblend_navbar from "../src/Two_g_masterblend_navbar";
 import { getPageData } from "../redux/pagedata";
 import { wrapper } from "../store";
+import { sentDataRequest } from "../redux/home";
 export default function twog_masterblend() {
   return (
     <div>
@@ -27,6 +28,6 @@ export default function twog_masterblend() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   await store.dispatch(getPageData());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  await store.dispatch(sentDataRequest());
+});

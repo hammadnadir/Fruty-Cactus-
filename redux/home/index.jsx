@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 import { HYDRATE } from "next-redux-wrapper";
 import request, { request2, baseURL2 } from "../request";
 // import { toast } from "react-toastify";
@@ -14,8 +15,8 @@ export const sentDataRequest = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       let response;
-      response = await request2
-        .get(`${baseURL2}api/home`)
+      response = await axios
+        .get(`http://dev.biztekapps.com:8051/api/home-api`)
         .then((response) => response.data);
       // toast(<RequestMessage message="Message sent successfully!" />);
       return response;

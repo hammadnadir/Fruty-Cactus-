@@ -4,37 +4,25 @@ import Logo from "./Logo";
 import myheader from "../imagePath.json";
 import Fade from "react-reveal/Fade";
 import { MainData } from "../data";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { sentDataRequest } from "../redux/home";
 
 // console.log(myheader.header1);
 export default function Hero() {
   const [data, setData] = useState([]);
-  const getuser = async () => {
-    const response = await fetch(
-      "http://dev.biztekapps.com:8051/api/banner"
-    ).then((response) => response.json());
-    setData(response);
-    if (response){
-      console.log(response[0]?.background_image)
-      console.log(response[0]?.product_images[0])
-      console.log(response[0]?.product_images[1])
-    }
-    console.log(response)
-  };
-  useEffect(()=>{
-    
-  },[])
+
+  const dispatch = useDispatch();
+  const { homeData } = useSelector((state) => state.home);
+  console.log(homeData);
 
   useEffect(() => {
-    getuser();
+    dispatch(sentDataRequest());
   }, []);
-  const dispatch = useDispatch();
+  const url=homeData && homeData.banner.length > 0 && JSON.stringify(homeData.banner[0]?.background_image)
 
   return (
-    <div className='bg-[url("/herosection_image/HeaderBannerBackground1.png")] backcard1 bg-cover    bg-no-repeat '>
-    
-
+    <div className='backcard1 bg-cover    bg-no-repeat '  style={{backgroundImage: `url(${url})`}}>
       <div className="  flex justify-center  ">
         <div className=" flex justify-center z-10">
           <Logo />
@@ -45,8 +33,8 @@ export default function Hero() {
           <div className="">
             <img
               className="sm:w-[350px] w-[300px] md:w-[500px] lg:w-[670px]"
-              src={data[0]?.product_images[0]}
-              alt="about-img" 
+              src={homeData?.banner[0]?.product_images[0]}
+              alt="about-img"
             />
           </div>
         </Fade>
@@ -54,8 +42,8 @@ export default function Hero() {
           <div className="">
             <img
               className="sm:w-[350px] w-[300px] md:w-[500px] lg:w-[670px]"
-              src={data[0]?.product_images[1]}
-              alt="about-img" 
+              src={homeData?.banner[0]?.product_images[1]}
+              alt="about-img"
             />
           </div>
         </Fade>

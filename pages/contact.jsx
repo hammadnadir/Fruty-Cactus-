@@ -1,4 +1,4 @@
-import React, { useState as UseState } from "react";
+import React, { useState as UseState,useEffect } from "react";
 import Contact_text from "../src/Contact_text";
 import Footer from "../src/Footer";
 import Tripletap_masterblend_navbar from "../src/Tripletap_masterblend_navbar";
@@ -9,6 +9,7 @@ import RequestMessage from "../src/RequestMessage";
 import { toast } from "react-toastify";
 import { wrapper } from "../store";
 import { getPageData } from "../redux/pagedata";
+import { sentDataRequest } from "../redux/home";
 export default function contact() {
   const [inputData, setInputData] = UseState({});
   const [error, setError] = UseState({});
@@ -19,6 +20,15 @@ export default function contact() {
     e.preventDefault();
     validate(inputData);
   };
+  
+  useEffect(()=>{
+    let a=21
+   if(a ){
+    console.log("Not Prime")
+   }else{
+    console.log("Prime no")
+   }
+  },[])
 
   const validate = (value) => {
     let err = {};
@@ -129,6 +139,6 @@ export default function contact() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   await store.dispatch(getPageData());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  await store.dispatch(sentDataRequest());
+});

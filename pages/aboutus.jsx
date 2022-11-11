@@ -5,6 +5,7 @@ import Tripletap_masterblend_navbar from "../src/Tripletap_masterblend_navbar";
 import { Aboutus } from "../data";
 import { getPageData } from "../redux/pagedata";
 import { wrapper } from "../store";
+import { sentDataRequest } from "../redux/home";
 export default function aboutus() {
   return (
     <>
@@ -53,6 +54,6 @@ export default function aboutus() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   await store.dispatch(getPageData());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  await store.dispatch(sentDataRequest());
+});

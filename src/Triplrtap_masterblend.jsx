@@ -1,12 +1,19 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import { MainData } from "../data";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { sentDataRequest } from "../redux/home";
 export default function Triplrtap_masterblend() {
 
   const dispatch = useDispatch();
+  const { homeData } = useSelector((state)=>state.home)
+
+  useEffect(()=>{
+    dispatch(sentDataRequest())
+    },[])
+
 
   return (
     <>
@@ -14,7 +21,7 @@ export default function Triplrtap_masterblend() {
       {/* PRODUCT IMAGE  */}
         <Zoom>
           <div className="md:mt-[150px] md:mb-[150px] max-w-[350px] md:max-w-[450px] lg:mt-[150px] mt-[70px] ">
-            <img src={MainData[6].pdimg} alt="about-img"  />
+            <img src={homeData && homeData.home.length > 0 && homeData.home[5]?.product_image} alt="about-img"  />
           </div>
         </Zoom>
         {/*PRODUCT TIITLE IAMGE  */}
@@ -23,18 +30,18 @@ export default function Triplrtap_masterblend() {
             <div className="flex justify-center ">
               <img
                 className="lg:max-w-[300px] md:max-w-[250px] max-w-[200px]  "
-                src={MainData[6].titleimg}
+                src={homeData && homeData.home.length > 0 && homeData.home[5]?.title_image}
                 alt=""
               />
             </div>
             {/* PRODUCT DESCRIPTION */}
-            <p className="text-white md:text-[20px] text-center  font-medium mt-[20px] max-w-[600px]">
-              {MainData[6].description}
+            <p className="text-white md:text-[20px] text-center  font-medium mt-[20px] max-w-[500px]">
+              {homeData && homeData.home.length > 0 && homeData.home[5]?.description}
             </p>
             <div className="flex justify-center  mb-[10px]">
-              <Link href="/tripletap_masterblend_categories">
+              <Link href={homeData && homeData.home.length > 0 && homeData.home[5]?.button_url  || ""}>
                 <button className=" text-white px-[30px] py-[10px] text-[12px] md:text-[17px] md:px-[40px] md:py-[15px] outline outline-gray-50 rounded-[28px] outline-1 mt-[30px] font-medium btn hover:bg-green-400  transition duration-700   hover:scale-110 ">
-              {MainData[5].btn}
+              {homeData && homeData.home.length > 0 && homeData.home[5]?.button_title}
                 </button>
               </Link>
             </div>

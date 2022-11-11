@@ -5,6 +5,7 @@ import Twog_hhc_cards from "../src/Twog_hhc_cards";
 import Two_G_HHC_navbar from "../src/Two_G_HHC_navbar";
 import { getPageData } from "../redux/pagedata";
 import { wrapper } from "../store";
+import { sentDataRequest } from "../redux/home";
 
 export default function twog_hhc_categories() {
   return (
@@ -31,6 +32,6 @@ export default function twog_hhc_categories() {
   );
 }
 
-// export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-//   await store.dispatch(getPageData());
-// });
+export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+  await store.dispatch(sentDataRequest());
+});

@@ -7,11 +7,11 @@ import { useEffect } from "react";
 import { useState } from "react";
 export default function TwoG_hhc() {
   const [data ,setData]= useState([]);
-const getData = async () =>{
-const response = await fetch("http://dev.biztekapps.com:8051/api/home")
-}   
+// const getData = async () =>{
+// const response = await fetch("http://dev.biztekapps.com:8051/api/home")
+// }   
   useEffect(()=>{
-getData();
+// getData();
   },[])
   return (
     <>

@@ -12,7 +12,7 @@ const initialState = {
 export const sentContactRequest = createAsyncThunk("contact/sentContactRequest", async (payload, thunkAPI) => {
   try {
     let response;
-    response = await request.post(`?firstname=${payload.firstname}&email=${payload.email}&message=${payload.message}`, payload).then((response) => response.data);
+    response = await request.post(`index.php/?firstname=${payload.firstname}&email=${payload.email}&message=${payload.message}`, payload).then((response) => response.data);
     // toast(<RequestMessage message="Message sent successfully!" />);
     return response;
   } catch (error) {

@@ -12,7 +12,7 @@ import { sentDataRequest } from "../redux/home";
 export default function Twog_d11_item() {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
-  const { homeData } = useSelector((state) => state.home);
+  // const { homeData } = useSelector((state) => state.home);
   // const getData = async () => {
   //   const response = await fetch(
   //     "http://dev.biztekapps.com:8051/api/home"
@@ -25,7 +25,7 @@ export default function Twog_d11_item() {
     // getData();
     dispatch(sentDataRequest())
   }, []);
-  console.log(homeData)
+  // console.log(homeData)
 
   return (
     <>

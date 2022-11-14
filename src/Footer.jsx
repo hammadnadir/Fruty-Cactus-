@@ -9,10 +9,12 @@ import { MainData } from "../data";
 import { useDispatch, useSelector } from "react-redux";
 import { sentDataRequest } from "../redux/home";
 export default function Footer() {
-
+  
   const dispatch = useDispatch();
-  const { homeData } = useSelector((state) => state.home.homeData);
+  const { homeData } = useSelector((state) => state.home);
   console.log(homeData);
+  const url = homeData && homeData.footer.length > 0 && JSON.stringify(homeData.footer[0]?.footer_bg
+    );
 
   useEffect(() => {
     // dispatch(sentDataRequest());
@@ -22,25 +24,26 @@ export default function Footer() {
   return (
     <div>
       <Topbtn />
-      <div className="bg-[url('/footer/Footerbackground.png')] bg-cover">
+      <div className=" bg-cover"   style={{ backgroundImage: `url(${url})` }}>
         <div className="mt-[-40px] grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 items-center h-1/2 text-center md:text-start flex-col text-green-700 justify-between  md:items-start px-[60px] max-w-[1600px] mx-auto footer ">
           <div className="p-5 ">
             <ul className=" items-center flex flex-col">
               <div className="max-w-[200px] pt-[30px] md:pt-16 ">
               <Link href="/">
-                <img className="cursor-pointer" src={MainData[7].footerlogo} alt="about-img"  />
+                <img className="cursor-pointer" src={homeData?.footer[0]?.footer_logo
+} alt="about-img"  />
               </Link>
               </div>
               <div className="text-center text-[18px]  md:text-2xl text-black md:pb-10">
-                <p>{MainData[7].description1}</p>
-                <p>{MainData[7].description2}</p>
+                <p>{homeData?.footer[0]?.description}</p>
+                {/* <p>{MainData[7].description2}</p> */}
               </div>
             </ul>
           </div>
           <div className="p-5 md:pt-24 md:pb-12">
             <ul className="tracking-wider ">
               <p className="text-green-700 font-bold text-3xl pb-4">
-                {MainData[7].label}
+                {homeData?.footer[0]?.product_title}
               </p>
               <Link href="/">
                 <li className=" md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
@@ -116,16 +119,17 @@ export default function Footer() {
           <div className="p-5 md:pt-24 pb-12 tracking-wider ">
             <ul>
               <p className="text-green-700 font-bold text-3xl pb-4">
-                {MainData[7].contact}
+                {homeData?.footer[0]?.contact_title
+}
               </p>
               <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-400 cursor-pointer">
-                <a href="mailto: 666666666">{MainData[7].email}</a>
+                <a href="mailto: 666666666">{homeData?.footer[0]?.contact_email}</a>
               </li>
               <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-400 cursor-pointer">
-                <a href="tel: 666666666">{MainData[7].number}</a>
+                <a href="tel: 666666666">{homeData?.footer[0]?.contact_number}</a>
               </li>
               <li className="    text-[22px] md:text-2xl  hover:text-black cursor-pointer md:pt-16 pt-8">
-                Social Links
+                {homeData?.footer[0]?.social_link_title}
               </li>
               <div className="flex pt-3">
                 <Link href="https://www.instagram.com/" target="_blank">
@@ -153,7 +157,7 @@ export default function Footer() {
           </div>
         </div>
         <p className=" text-[12px] md:text-[18px] text-center pb-[15px]">
-          copy right © 2022. All Rights Reserved
+         {homeData?.footer[0]?.copyright}
         </p>
       </div>
     </div>

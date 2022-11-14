@@ -40,7 +40,7 @@ export default function Home() {
         <Tripletap_hhc_background />
         <Tripletap_masterblend_background />
         <Footer />
-        {/* <h2>Hammad</h2> */}
+     
       </div>
     </>
   );

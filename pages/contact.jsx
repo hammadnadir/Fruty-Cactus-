@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { wrapper } from "../store";
 import { getPageData } from "../redux/pagedata";
 import { sentDataRequest } from "../redux/home";
+import { useState } from "react";
 export default function contact() {
   const [inputData, setInputData] = UseState({});
   const [error, setError] = UseState({});
@@ -59,21 +60,29 @@ export default function contact() {
   const handleChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
-
-  return (
+const [data, setData]=useState([])
+ const getdata =async () =>{
+const response = await fetch ("http://dev.biztekapps.com:8051/api/contact");
+setData ( await response.json());
+console.log(response) 
+}
+useEffect(()=>{
+  getdata();
+},[])
+return (
     <>
       <div className="bg-[#d8aa6e]  md:pb-[70px]  about">
         <Tripletap_masterblend_navbar />
         <div className="py-[40px]">
           <div className="pt-[130px] md:pt-[180px] text-center text-5xl about ">
-            {Contactus[0].heading}
+            {data[0]?.title}
           </div>
 
           <div className="bg-none lg:bg-[#76a641] my-14 mx-auto max-w-5xl h-[600px] flex items-center">
             {/* image */}
 
             <div className="hidden lg:flex md:items-center md:justify-center  md:p-10">
-              <img className="" src={Contactus[0].img} alt="contact-us" />
+              <img className="" src={data[0]?.image} alt="contact-us" />
             </div>
 
             {/* right secction */}
@@ -82,10 +91,10 @@ export default function contact() {
               <div className="">
                   <img
                     className="w-[150px] m-auto pb-[20px]"
-                    src={Contactus[0].logo}
+                    src={data[0]?.logo}
                     alt="contact-us"
                   />
-                <div className="text-3xl  pb-[20px]">{Contactus[0].tittle}</div>
+                <div className="text-3xl  pb-[20px]">{data[0]?.form_title}</div>
                 <form onSubmit={handleSubmit}>
                   <Contact_text
                     label={"Enter Full Name"}
@@ -124,7 +133,7 @@ export default function contact() {
                       className="outline outline-slate-200 outline-1 hover:bg-[#699BF7] hover:text-white h-[41px] rounded-md text-sm w-full"
                       type="submit"
                     >
-                      {Contactus[0].btn}
+                      {data[0]?.button_name}
                     </button>
                   </div>
                 </form>
@@ -134,7 +143,7 @@ export default function contact() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

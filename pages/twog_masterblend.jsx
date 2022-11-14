@@ -4,8 +4,17 @@ import Footer from "../src/Footer";
 import Two_g_masterblend_navbar from "../src/Two_g_masterblend_navbar";
 import { getPageData } from "../redux/pagedata";
 import { wrapper } from "../store";
-import { sentDataRequest } from "../redux/home";
+import { sentProductRequest } from "../redux/Products";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 export default function twog_masterblend() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+  dispatch(sentProductRequest())
+
+  
+},[])
+const {productData} = useSelector ((state)=>state.Products);
   return (
     <div>
       <Two_g_masterblend_navbar />
@@ -14,7 +23,7 @@ export default function twog_masterblend() {
           <div className="flex justify-center pt-[100px]  md:pt-[220px]">
             <img
               className="xl:max-w-[300px] lg:max-w-[210px] md:max-w-[150px] sm:max-w-[150px] max-w-[150px]  "
-              src="/images/2 GRAM Masterblend-07.png"
+              src={productData[2]?.title_image}
               alt="about-img" 
             />
           </div>
@@ -23,11 +32,11 @@ export default function twog_masterblend() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-  await store.dispatch(sentDataRequest());
+  await store.dispatch(sentProductRequest());
 });

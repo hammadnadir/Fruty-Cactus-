@@ -1,12 +1,23 @@
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { sentDataRequest } from "../redux/home";
 import { getPageData } from "../redux/pagedata";
+import { sentProductRequest } from "../redux/Products";
 
 import Footer from "../src/Footer";
 import Tripletap_D11_cards from "../src/Tripletap_D11_cards";
 import Tripletap_d11_navbar from "../src/Tripletap_d11_navbar";
 import { wrapper } from "../store";
 export default function tripletap_d11_categories() {
+  
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(sentProductRequest());
+  },[])
+const {productData} = useSelector ((state)=>state.Products)
+
   return (
     <div>
       <Tripletap_d11_navbar />
@@ -15,7 +26,7 @@ export default function tripletap_d11_categories() {
           <div className="flex justify-center pt-[100px]  md:pt-[220px]">
             <img
               className="xl:max-w-[300px] lg:max-w-[210px] md:max-w-[150px] sm:max-w-[150px] max-w-[150px]  "
-              src="/images/D11-07.png"
+              src={productData[3]?.title_image}
               alt="about-img" 
             />
           </div>
@@ -24,11 +35,11 @@ export default function tripletap_d11_categories() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-  await store.dispatch(sentDataRequest());
+  await store.dispatch(sentProductRequest());
 });

@@ -9,21 +9,31 @@ import Twog_delta11_cards from "../src/Twog_delta11_cards";
 import Two_g_delta11_navbar from "../src/Two_g_delta11_navbar";
 import { getPageData } from "../redux/pagedata";
 import { wrapper } from "../store";
-import { sentDataRequest } from "../redux/home";
+import {sentProductRequest } from "../redux/Products";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function twog_delta11_catergories() {
+  const { productData } = useSelector((state) => state.Products);
+  
+  console.log(productData)
+const dispatch = useDispatch();
+  useEffect(()=>{
+  dispatch(sentProductRequest())
+  },[])
+
   return (
     <div>
       <Two_g_delta11_navbar />
       <div className="">
-        <div className='bg-[url("/images/2GD11Background2.png")] w-[100%] bg-cover  '>
+        <div className='bg-[url("/images/2GD11Background2.png")] w-[100%] bg-cover'>
           <Fade top>
             <div className="flex justify-center pt-[100px]  md:pt-[180px]">
-              <img
+             { productData && (<img
                 className="xl:max-w-[250px] lg:max-w-[210px] md:max-w-[150px] sm:max-w-[150px] max-w-[150px]"
-                src="/images/2GRAMD11-04.png"
+                src={productData[0]?.title_image}   
                 alt=""
-              />
+              />)}
             </div>
           </Fade>
           <div className="max-w-[1280px] mx-auto">
@@ -31,11 +41,11 @@ export default function twog_delta11_catergories() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
-  await store.dispatch(sentDataRequest());
+  await store.dispatch(sentProductRequest());
 });

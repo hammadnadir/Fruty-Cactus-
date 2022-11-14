@@ -11,7 +11,7 @@ export default function TripleTap_d11_item() {
   const { homeData } = useSelector((state)=>state.home)
 
   useEffect(()=>{
-    dispatch(sentDataRequest())
+    // dispatch(sentDataRequest())
     },[])
 
   return (

@@ -17,7 +17,7 @@ export default function Twog_d11_item() {
   console.log("kk",homeData)
 
   useEffect(()=>{
-  dispatch(sentDataRequest())
+  // dispatch(sentDataRequest())
   },[])
 
   return (

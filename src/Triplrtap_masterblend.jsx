@@ -11,7 +11,7 @@ export default function Triplrtap_masterblend() {
   const { homeData } = useSelector((state)=>state.home)
 
   useEffect(()=>{
-    dispatch(sentDataRequest())
+    // dispatch(sentDataRequest())
     },[])
 
 

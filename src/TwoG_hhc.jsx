@@ -14,7 +14,7 @@ export default function TwoG_hhc() {
   const { homeData } = useSelector((state)=>state.home)
 
   useEffect(()=>{
-  dispatch(sentDataRequest())
+  // dispatch(sentDataRequest())
   },[])
 
   return (

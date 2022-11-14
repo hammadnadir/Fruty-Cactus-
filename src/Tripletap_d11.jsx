@@ -9,7 +9,7 @@ export default function Tripletap_d11() {
   const { homeData } = useSelector((state)=>state.home)
 
   useEffect(()=>{
-  dispatch(sentDataRequest())
+  // dispatch(sentDataRequest())
   },[]) 
   const url=homeData && homeData.home.length > 0 && JSON.stringify(homeData.home[3]?.background_image)
 

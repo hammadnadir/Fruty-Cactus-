@@ -16,7 +16,7 @@ export const sentDataRequest = createAsyncThunk(
     try {
       let response;
       response = await axios
-        .get(`http://dev.biztekapps.com:8051/api/home-api`)
+        .get(`${baseURL2}api/home-api`)
         .then((response) => response.data);
       // toast(<RequestMessage message="Message sent successfully!" />);
       return response;
@@ -35,7 +35,10 @@ export const homeDataSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
       console.log("HYDRATE", action.payload);
-      // state.selectedUser = action?.payload?.user?.selectedUser?.id ? action.payload.user.selectedUser : state?.selectedUser;
+      state.banner = action?.payload?.banner ? action.payload.banner : state?.banner;
+      state.home = action?.payload?.home ? action.payload.home : state?.home;
+      state.footer = action?.payload?.footer ? action.payload.footer : state?.footer;
+      state.header = action?.payload?.header ? action.payload.header : state?.header;
       //   state.usersQuery = action?.payload?.user?.users?.usersQuery?.id ? action.payload.user.users.usersQuery : state?.usersQuery;
     });
     builder.addCase(sentDataRequest.pending, (state) => {

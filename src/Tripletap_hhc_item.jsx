@@ -12,7 +12,7 @@ export default function Tripletap_hhc_item() {
   console.log(homeData)
 
   useEffect(()=>{
-    dispatch(sentDataRequest())
+    // dispatch(sentDataRequest())
     },[])
 
   return (

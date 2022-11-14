@@ -8,7 +8,7 @@ export default function Tripletap_hhc_background() {
   const { homeData } = useSelector((state)=>state.home)
 
   useEffect(()=>{
-  dispatch(sentDataRequest())
+  // dispatch(sentDataRequest())
   },[]) 
   const url=homeData && homeData.home.length > 0 && JSON.stringify(homeData.home[4]?.background_image)
 

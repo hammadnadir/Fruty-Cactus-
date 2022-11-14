@@ -9,7 +9,7 @@ export default function Twog_hhc_background() {
   const { homeData } = useSelector((state)=>state.home)
 
   useEffect(()=>{
-  dispatch(sentDataRequest())
+  // dispatch(sentDataRequest())
   },[]) 
   const url=homeData && homeData.home.length > 0 && JSON.stringify(homeData.home[1]?.background_image)
 

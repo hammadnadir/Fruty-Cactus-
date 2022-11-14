@@ -17,7 +17,7 @@ export default function Hero() {
   console.log(homeData);
 
   useEffect(() => {
-    dispatch(sentDataRequest());
+    // dispatch(sentDataRequest());
   }, []);
   const url=homeData && homeData.banner.length > 0 && JSON.stringify(homeData.banner[0]?.background_image)
 

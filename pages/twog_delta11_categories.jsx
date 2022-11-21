@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function twog_delta11_catergories() {
   const { productData } = useSelector((state) => state.Products);
-  
+  const url = productData && JSON.stringify(productData[0]?.background_image);
   console.log(productData)
 const dispatch = useDispatch();
   useEffect(()=>{
@@ -26,7 +26,7 @@ const dispatch = useDispatch();
     <div>
       <Two_g_delta11_navbar />
       <div className="">
-        <div className='bg-[url("/images/2GD11Background2.png")] w-[100%] bg-cover'>
+        <div className=' w-[100%] bg-cover' style={{ backgroundImage: `url(${url})` }}>
           <Fade top>
             <div className="flex justify-center pt-[100px]  md:pt-[180px]">
              { productData && (<img

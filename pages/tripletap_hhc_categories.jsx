@@ -13,12 +13,14 @@ export default function tripletap_hhc_categories() {
     dispatch(sentProductRequest())
   },[])
   const {productData} = useSelector ((state)=>state.Products)
+const url = productData && JSON.stringify(productData[4]?.background_image);
+
   console.log(productData[4]?.title_image)
   return (
     <div>
       <Tripletap_hhc_navbar />
       <div className="">
-        <div className='bg-[url("/images/TripleTapHHCBackground2.png")] w-[100%] bg-cover  '>
+        <div className=' w-[100%] bg-cover  ' style={{ backgroundImage: `url(${url})` }}>
           <div className="flex justify-center pt-[100px]  md:pt-[190px]">
             <img
               className="xl:max-w-[250px] lg:max-w-[210px] md:max-w-[150px] sm:max-w-[150px] max-w-[150px]  "

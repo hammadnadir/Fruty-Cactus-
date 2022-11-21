@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
 import { MainData } from "../data";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 export default function Logo() {
   const [green, setGreen] = useState(false);
 
@@ -148,7 +148,7 @@ export default function Logo() {
   } else {
     // console.log("You are on the server");
   }
-
+  const { homeData } = useSelector((state) => state.home);
   return (
     <>
       <div className={backclass}>
@@ -174,7 +174,7 @@ export default function Logo() {
               <Link href="/">
                 <img
                   className="md:w-[300px] w-[200px] cursor-pointer"
-                  src={MainData[7].logo}
+                  src={homeData?.header[0]?.header_logo}
                   alt="about-img" 
                 />
               </Link>

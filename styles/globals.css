@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 .btn:hover{
     background-color: rgb(29, 170, 29) ;
     box-shadow: 2px 1px 4px 2px;

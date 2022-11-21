@@ -11,6 +11,8 @@ import { useEffect } from "react";
 
 export default function twog_hhc_categories() {
   const {productData } = useSelector ((state)=>state.Products)
+  const url = productData && JSON.stringify(productData[1]?.background_image);
+
   console.log(productData)
   console.log(productData)
   const dispatch = useDispatch();
@@ -21,7 +23,7 @@ export default function twog_hhc_categories() {
     <div>
       <Two_G_HHC_navbar />
       <div className="">
-        <div className='bg-[url("/images/2GHHCBackground2.png")] w-[100%] bg-cover  '>
+        <div className=' w-[100%] bg-cover  ' style={{ backgroundImage: `url(${url})` }}>
           <Fade top>
             <div className="flex justify-center pt-[100px]  md:pt-[180px]">
               {productData &&

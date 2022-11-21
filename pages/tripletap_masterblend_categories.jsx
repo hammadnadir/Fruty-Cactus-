@@ -14,11 +14,13 @@ export default function tripletap_masterblend_categories() {
     dispatch(sentProductRequest())
   },[])
   const {productData} = useSelector ((state)=>state.Products)
+const url = productData && JSON.stringify(productData[5]?.background_image);
+
   return (
     <div>
       <Tripletap_masterblend_navbar />
       <div className="">
-        <div className='bg-[url("/images/TripleTapMasterblendBackground3.png")] w-[100%] bg-cover  '>
+        <div className=' w-[100%] bg-cover  ' style={{ backgroundImage: `url(${url})` }}>
           <div className="flex justify-center pt-[100px]  md:pt-[230px]">
             <img
               className="xl:max-w-[300px] lg:max-w-[210px] md:max-w-[150px] sm:max-w-[150px] max-w-[150px]  "

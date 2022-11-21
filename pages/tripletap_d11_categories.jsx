@@ -17,12 +17,13 @@ export default function tripletap_d11_categories() {
     dispatch(sentProductRequest());
   },[])
 const {productData} = useSelector ((state)=>state.Products)
+const url = productData && JSON.stringify(productData[3]?.background_image);
 
   return (
     <div>
       <Tripletap_d11_navbar />
       <div className="">
-        <div className='bg-[url("/images/2GMasterBlendBackground2.png")] w-[100%] bg-cover  '>
+        <div className=' w-[100%] bg-cover  ' style={{ backgroundImage: `url(${url})` }}>
           <div className="flex justify-center pt-[100px]  md:pt-[220px]">
             <img
               className="xl:max-w-[300px] lg:max-w-[210px] md:max-w-[150px] sm:max-w-[150px] max-w-[150px]  "

@@ -60,34 +60,34 @@ export default function Footer() {
                   {MainData[7].link3}
                 </li>
               </Link>
-              <Link href="/twog_delta11_categories">
+              <Link href={homeData?.product[0].url}>
                 <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
-                  {MainData[7].product_link1}
+                  {homeData?.product[0]?.name}
                 </li>
               </Link>
-              <Link href="/twog_hhc_categories">
+              <Link href={homeData?.product[1].url}>
                 <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
-                  {MainData[7].product_link2}
+                  {homeData?.product[1].name}
                 </li>
               </Link>
-              <Link href="/twog_masterblend">
+              <Link href={homeData?.product[2].url}>
                 <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
-                  {MainData[7].product_link3}
+                {homeData?.product[2].name}
                 </li>
               </Link>
-              <Link href="/tripletap_d11_categories">
+              <Link href={homeData?.product[3].url}>
                 <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
-                  {MainData[7].product_link4}
+                {homeData?.product[3].name}
                 </li>
               </Link>
-              <Link href="/tripletap_hhc_categories">
+              <Link href={homeData?.product[4].url}>
                 <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
-                  {MainData[7].product_link5}
+                {homeData?.product[4].name}
                 </li>
               </Link>
-              <Link href="/tripletap_masterblend_categories">
+              <Link href={homeData?.product[5].url}>
                 <li className=" text-black    text-[18px] md:text-2xl   hover:text-yellow-500 cursor-pointer">
-                  {MainData[7].product_link6}
+                {homeData?.product[5].name}
                 </li>
               </Link>
             </ul>

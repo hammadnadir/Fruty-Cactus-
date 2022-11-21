@@ -20,17 +20,17 @@ function Home() {
   
   const dispatch = useDispatch();
   
-  useEffect(() => {
-    dispatch(sentDataRequest());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(sentDataRequest());
+  // }, []);
   const { homeData } = useSelector((state) => state.home);
   // const green = homeData?.header[0]?.smoke_variations[0]
-  const red = homeData?.header[0]?.smoke_variations[1]
-  const darkgreen = homeData?.header[0]?.smoke_variations[2]
-  const blue = homeData?.header[0]?.smoke_variations[3]
-  const orange = homeData?.header[0]?.smoke_variations[4]
-  const purple = homeData?.header[0]?.smoke_variations[5]
-  const greenend = homeData?.header[0]?.smoke_variations[6]
+  // const red = homeData?.header[0]?.smoke_variations[1]
+  // const darkgreen = homeData?.header[0]?.smoke_variations[2]
+  // const blue = homeData?.header[0]?.smoke_variations[3]
+  // const orange = homeData?.header[0]?.smoke_variations[4]
+  // const purple = homeData?.header[0]?.smoke_variations[5]
+  // const greenend = homeData?.header[0]?.smoke_variations[6]
 
 
   return (
@@ -49,7 +49,7 @@ function Home() {
         <Tripletap_hhc_background />
         <Tripletap_masterblend_background />
         <Footer />
-     
+        {/* <h2>HI</h2>      */}
       </div>
     </>
   );

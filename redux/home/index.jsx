@@ -35,10 +35,11 @@ export const homeDataSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
       console.log("HYDRATE", action.payload);
-      state.banner = action?.payload?.banner ? action.payload.banner : state?.banner;
-      state.home = action?.payload?.home ? action.payload.home : state?.home;
-      state.footer = action?.payload?.footer ? action.payload.footer : state?.footer;
-      state.header = action?.payload?.header ? action.payload.header : state?.header;
+      state.homeData = action?.payload?.home?.homeData?.banner?.length > 0 && action?.payload?.home?.homeData?.footer?.length > 0 && action?.payload?.home?.homeData?.header?.length > 0 && action?.payload?.home?.homeData?.home?.length > 0 && action?.payload?.home?.homeData?.product?.length > 0 ?  action.payload.home.homeData : state?.homeData;
+      // state.homeData = action?.payload?.banner ? action.payload.banner : state?.homeData;
+      // state.home = action?.payload?.home ? action.payload.home : state?.home;
+      // state.footer = action?.payload?.footer ? action.payload.footer : state?.footer;
+      // state.header = action?.payload?.header ? action.payload.header : state?.header;
       //   state.usersQuery = action?.payload?.user?.users?.usersQuery?.id ? action.payload.user.users.usersQuery : state?.usersQuery;
     });
     builder.addCase(sentDataRequest.pending, (state) => {

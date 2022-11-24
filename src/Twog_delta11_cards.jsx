@@ -23,6 +23,12 @@ export default function Twog_delta11_cards() {
                     </p>
                     {/* <p className='mt-[10px] text-[11px] text-center  ' >{props.title}</p> */}
                   </div>
+                  <a href="/" target="_blank"> 
+
+                    <div className="flex justify-center py-[5px]">
+                    <button className="px-6  py-[4px] bg-red-500 text-white text-[17px] rounded-md font-medium">cos</button>
+                    </div>
+                  </a>
                 </div>
               );
             })}

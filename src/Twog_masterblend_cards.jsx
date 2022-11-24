@@ -22,6 +22,12 @@ export default function Twog_masterblend_cards() {
                     {items.title}
                   </p>
                 </div>
+                <a href="/" target="_blank"> 
+
+<div className="flex justify-center py-[5px]">
+<button className="px-6  py-[4px] bg-blue-500 text-white text-[17px] rounded-md font-medium">cos</button>
+</div>
+</a>
               </div>
             );
           })}

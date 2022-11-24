@@ -46,47 +46,47 @@ export default function Footer() {
                 {homeData?.footer[0]?.product_title}
               </p>
               <Link href="/">
-                <li className=" md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {MainData[7].link1}
                 </li>
               </Link>
               <Link href="/aboutus">
-                <li className=" md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {MainData[7].link2}
                 </li>
               </Link>
               <Link href="/contact">
-                <li className=" md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit md:hidden block text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {MainData[7].link3}
                 </li>
               </Link>
               <Link href={homeData?.product[0].url}>
-                <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {homeData?.product[0]?.name}
                 </li>
               </Link>
               <Link href={homeData?.product[1].url}>
-                <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {homeData?.product[1].name}
                 </li>
               </Link>
               <Link href={homeData?.product[2].url}>
-                <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                 {homeData?.product[2].name}
                 </li>
               </Link>
               <Link href={homeData?.product[3].url}>
-                <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                 {homeData?.product[3].name}
                 </li>
               </Link>
               <Link href={homeData?.product[4].url}>
-                <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                 {homeData?.product[4].name}
                 </li>
               </Link>
               <Link href={homeData?.product[5].url}>
-                <li className=" text-black    text-[18px] md:text-2xl   hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black    text-[18px] md:text-2xl   hover:text-yellow-500 cursor-pointer">
                 {homeData?.product[5].name}
                 </li>
               </Link>
@@ -99,17 +99,17 @@ export default function Footer() {
                 {MainData[7].Menu}
               </p>
               <Link href="/">
-                <li className=" text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {MainData[7].link1}
                 </li>
               </Link>
               <Link href="/aboutus">
-                <li className=" text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {MainData[7].link2}
                 </li>
               </Link>
               <Link href="/contact">
-                <li className=" text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
+                <li className="w-fit text-black text-[18px]  md:text-2xl pb-2  hover:text-yellow-500 cursor-pointer">
                   {MainData[7].link3}
                 </li>
               </Link>
@@ -122,13 +122,13 @@ export default function Footer() {
                 {homeData?.footer[0]?.contact_title
 }
               </p>
-              <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-400 cursor-pointer">
+              <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-400 cursor-pointer">
                 <a href="mailto: 666666666">{homeData?.footer[0]?.contact_email}</a>
               </li>
-              <li className=" text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-400 cursor-pointer">
+              <li className="w-fit text-black    text-[18px] md:text-2xl pb-2  hover:text-yellow-400 cursor-pointer">
                 <a href="tel: 666666666">{homeData?.footer[0]?.contact_number}</a>
               </li>
-              <li className="    text-[22px] md:text-2xl  hover:text-black cursor-pointer md:pt-16 pt-8">
+              <li className="w-fit    text-[22px] md:text-2xl  hover:text-black cursor-pointer md:pt-16 pt-8">
                 {homeData?.footer[0]?.social_link_title}
               </li>
               <div className="flex pt-3">

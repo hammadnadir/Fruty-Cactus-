@@ -1,18 +1,11 @@
-import React ,{useEffect} from "react";
+import React  from "react";
 import Link from "next/link";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import { MainData } from "../data";
-import { useDispatch, useSelector } from "react-redux";
-import { sentDataRequest } from "../redux/home";
+import { useSelector } from "react-redux";
 export default function TripleTap_d11_item() {
 
-  const dispatch = useDispatch();
   const { homeData } = useSelector((state)=>state.home)
-
-  useEffect(()=>{
-    // dispatch(sentDataRequest())
-    },[])
 
   return (
     <>

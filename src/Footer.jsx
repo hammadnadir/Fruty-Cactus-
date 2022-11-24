@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -6,20 +6,12 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Topbtn from "./Topbtn";
 import { MainData } from "../data";
-import { useDispatch, useSelector } from "react-redux";
-import { sentDataRequest } from "../redux/home";
+import { useSelector } from "react-redux";
 export default function Footer() {
   
-  const dispatch = useDispatch();
   const { homeData } = useSelector((state) => state.home);
-  console.log(homeData);
   const url = homeData && homeData.footer.length > 0 && JSON.stringify(homeData.footer[0]?.footer_bg
     );
-
-  useEffect(() => {
-    // dispatch(sentDataRequest());
-  }, []);
-  // const url=homeData && homeData.banner.length > 0 && JSON.stringify(homeData.banner[0]?.background_image)
 
   return (
     <div>

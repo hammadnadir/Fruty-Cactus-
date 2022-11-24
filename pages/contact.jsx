@@ -1,19 +1,16 @@
-import React, { useState as UseState,useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Contact_text from "../src/Contact_text";
 import Footer from "../src/Footer";
 import Tripletap_masterblend_navbar from "../src/Tripletap_masterblend_navbar";
-import { Contactus } from "../data";
 import { useDispatch } from "react-redux";
 import { sentContactRequest } from "../redux/contact";
 import RequestMessage from "../src/RequestMessage";
 import { toast } from "react-toastify";
 import { wrapper } from "../store";
-import { getPageData } from "../redux/pagedata";
 import { sentDataRequest } from "../redux/home";
-import { useState } from "react";
 export default function contact() {
-  const [inputData, setInputData] = UseState({});
-  const [error, setError] = UseState({});
+  const [inputData, setInputData] = useState({});
+  const [error, setError] = useState({});
 
   const dispatch = useDispatch();
 
@@ -21,15 +18,6 @@ export default function contact() {
     e.preventDefault();
     validate(inputData);
   };
-  
-  useEffect(()=>{
-    let a=21
-   if(a ){
-    console.log("Not Prime")
-   }else{
-    console.log("Prime no")
-   }
-  },[])
 
   const validate = (value) => {
     let err = {};
@@ -68,7 +56,9 @@ console.log(response)
 }
 useEffect(()=>{
   getdata();
-},[])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+},[]);
+
 return (
     <>
       <div className="bg-[#d8aa6e]  md:pb-[70px]  about">
@@ -148,6 +138,6 @@ return (
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
   await store.dispatch(sentDataRequest());
 });

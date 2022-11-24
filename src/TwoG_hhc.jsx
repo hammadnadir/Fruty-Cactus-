@@ -2,8 +2,6 @@ import React from "react";
 import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
-import { MainData } from "../data";
-import { useEffect } from "react";
 import { useState } from "react";
 import { sentDataRequest } from "../redux/home";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,10 +10,6 @@ export default function TwoG_hhc() {
 
   const dispatch = useDispatch();
   const { homeData } = useSelector((state)=>state.home)
-
-  useEffect(()=>{
-  // dispatch(sentDataRequest())
-  },[])
 
   return (
     <>

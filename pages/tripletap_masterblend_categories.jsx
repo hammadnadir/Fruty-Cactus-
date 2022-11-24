@@ -13,6 +13,7 @@ export default function tripletap_masterblend_categories() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(sentProductRequest())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   const {productData} = useSelector ((state)=>state.Products)
 const url = productData && JSON.stringify(productData[5]?.background_image);
@@ -39,7 +40,7 @@ const url = productData && JSON.stringify(productData[5]?.background_image);
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
   await store.dispatch(sentProductRequest());
   await store.dispatch(sentDataRequest());
 });

@@ -33,16 +33,7 @@ export const productDataSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
-
-
-
-
-
-
-
-
-      
-      console.log("HYDRATE", action.payload);
+    console.log("HYDRATE", action.payload);
         // state.productData = action?.payload?.user?.users?.usersQuery?.id ? action.payload.user.users.usersQuery : state?.usersQuery;
     });
     builder.addCase(sentProductRequest.pending, (state) => {

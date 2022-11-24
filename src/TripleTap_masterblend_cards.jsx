@@ -20,7 +20,7 @@ export default function TripleTap_masterblend_cards() {
                       {items.title}
                     </p>
                   </div>
-                  <a href="/" target="_blank">
+                  <a href={items.cos} target="_blank">
                     <div className="flex justify-center py-[5px]">
                       <button className="px-6  py-[4px] bg-green-500 text-white text-[17px] rounded-md font-medium">
                         cos

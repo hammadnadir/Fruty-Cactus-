@@ -108,6 +108,7 @@ export default function Logo() {
   if (screen.matches){
     setShow(false)
   }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   function useWindowSize() {
@@ -138,6 +139,7 @@ export default function Logo() {
         // Remove event listener on cleanup
         return () => window.removeEventListener("resize", handleResize);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); // Empty array ensures that effect is only run on mount
     return windowSize;
   }

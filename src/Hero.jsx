@@ -1,24 +1,12 @@
-import React, { useEffect } from "react";
-
+import React from "react";
 import Logo from "./Logo";
-import myheader from "../imagePath.json";
 import Fade from "react-reveal/Fade";
-import { MainData } from "../data";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { sentDataRequest } from "../redux/home";
+import { useSelector } from "react-redux";
 
-// console.log(myheader.header1);
 export default function Hero() {
-  const [data, setData] = useState([]);
 
-  const dispatch = useDispatch();
   const { homeData } = useSelector((state) => state.home);
-  console.log(homeData);
 
-  useEffect(() => {
-    // dispatch(sentDataRequest());
-  }, []);
   const url=homeData && homeData.banner.length > 0 && JSON.stringify(homeData.banner[0]?.background_image)
 
   return (

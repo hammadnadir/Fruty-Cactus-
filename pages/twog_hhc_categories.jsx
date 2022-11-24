@@ -14,11 +14,10 @@ export default function twog_hhc_categories() {
   const {productData } = useSelector ((state)=>state.Products)
   const url = productData && JSON.stringify(productData[1]?.background_image);
 
-  console.log(productData)
-  console.log(productData)
   const dispatch = useDispatch();
   useEffect(()=>{
-  dispatch(sentProductRequest())
+  dispatch(sentProductRequest());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
     <div>
@@ -46,7 +45,7 @@ export default function twog_hhc_categories() {
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
   await store.dispatch(sentProductRequest());
   await store.dispatch(sentDataRequest());
 });

@@ -1,4 +1,4 @@
-import React ,{useEffect} from "react";
+import React  from "react";
 import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
@@ -9,10 +9,6 @@ export default function Twog_masterblend() {
 
   const dispatch = useDispatch();
   const { homeData } = useSelector((state)=>state.home)
-
-  useEffect(()=>{
-  // dispatch(sentDataRequest())
-  },[]) 
 
   return (
     <>

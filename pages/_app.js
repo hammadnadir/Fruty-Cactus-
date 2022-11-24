@@ -10,9 +10,11 @@ import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { setLoading } from "../redux/global";
+import { useState } from "react";
 
 function MyApp({ Component, ...pageProps }) {
 
+  const [isSSR, setIsSSR] = useState(true);
   const { loading } = useSelector((state) => state.global);
   const router = useRouter();
   const dispatch = useDispatch();
@@ -29,6 +31,17 @@ function MyApp({ Component, ...pageProps }) {
     router.events.on("routeChangeError", handleComplete);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
+
+  useEffect(() => {
+    setIsSSR(false);
+    // toast(<RequestMessage icon="bi bi-exclamation-triangle" message="Message failed!" />);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+  if (isSSR) {
+    return null;
+  }
+
 
   return (
     <>

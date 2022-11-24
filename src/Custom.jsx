@@ -5,7 +5,7 @@ export default function Custom() {
     var header = document.querySelector(".navcolor");
   }
 
-  console.log(header);
+  // console.log(header);
 
   return <div></div>;
 }

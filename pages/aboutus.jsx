@@ -12,18 +12,19 @@ export default function aboutus() {
 const getuser = async ()=>{
   const response = await fetch("http://dev.biztekapps.com:8051/api/about")
 setData(await response.json())
-console.log(data)
+// console.log(data)
 
 }
 const [itemdata , setItemData]=useState([])
  const getdata = async ()=>{
 const response1 = await fetch("http://dev.biztekapps.com:8051/api/about-details")
 setItemData(await response1.json())
-console.log(response1);
+// console.log(response1);
  } 
   useEffect(()=>{
     getuser();
     getdata();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
  
   return (
@@ -79,6 +80,6 @@ console.log(response1);
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
   await store.dispatch(sentDataRequest());
 });

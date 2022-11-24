@@ -6,11 +6,8 @@ import Twog_masterblend_background from "../src/Twog_masterblend_background";
 import Twog_d11_background from "../src/Twog_d11_background";
 import Tripletap_hhc_background from "../src/Tripletap_hhc_background";
 import Tripletap_d11 from "../src/Tripletap_d11";
-import { Provider, useDispatch, useSelector } from "react-redux";
 import { wrapper } from "../store";
-import { getPageData } from "../redux/pagedata";
 import { sentDataRequest } from "../redux/home";
-import { useEffect } from "react";
 
 import axios from "axios";
 // import { Store } from "@reduxjs/toolkit";
@@ -18,12 +15,6 @@ import axios from "axios";
 
 function Home() {
   
-  const dispatch = useDispatch();
-  
-  // useEffect(() => {
-  //   dispatch(sentDataRequest());
-  // }, []);
-  const { homeData } = useSelector((state) => state.home);
   // const green = homeData?.header[0]?.smoke_variations[0]
   // const red = homeData?.header[0]?.smoke_variations[1]
   // const darkgreen = homeData?.header[0]?.smoke_variations[2]
@@ -55,7 +46,7 @@ function Home() {
   );
 }
 
-export const getServerSideProps = wrapper.getServerSideProps(
+export const getStaticProps = wrapper.getStaticProps(
   (store) => async () => {
     await store.dispatch(sentDataRequest());
   }

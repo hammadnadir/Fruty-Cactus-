@@ -1,19 +1,11 @@
-import React ,{useEffect} from "react";
+import React  from "react";
 import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
-import { MainData } from "../data";
-import { useDispatch, useSelector } from "react-redux";
-import { sentDataRequest } from "../redux/home";
+import {  useSelector } from "react-redux";
 export default function Tripletap_hhc_item() {
 
-  const dispatch = useDispatch();
   const { homeData } = useSelector((state)=>state.home)
-  console.log(homeData)
-
-  useEffect(()=>{
-    // dispatch(sentDataRequest())
-    },[])
 
   return (
     <>

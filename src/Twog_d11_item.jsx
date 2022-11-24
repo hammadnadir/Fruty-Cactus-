@@ -4,7 +4,6 @@ import Slide from "react-reveal/Slide";
 import Link from "next/link";
 import { MainData } from "../data";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { getPageData } from "../redux/pagedata";
 import { useState } from "react";
 import { sentDataRequest } from "../redux/home";
@@ -15,10 +14,6 @@ export default function Twog_d11_item() {
   const dispatch = useDispatch();
   const { homeData } = useSelector((state)=>state.home)
   console.log("kk",homeData)
-
-  useEffect(()=>{
-  // dispatch(sentDataRequest())
-  },[])
 
   return (
     <>

@@ -33,7 +33,7 @@ function MyApp({ Component, ...pageProps }) {
   return (
     <>
     <ToastContainer position="top-right" autoClose={5000} hideProgressBar newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
-     <SessionProvider session={pageProps.session}>
+     {/* <SessionProvider session={pageProps.session}> */}
         <div className={`${loading ? "spinner" : "spinner-hide"}`}>
         <div role="status">
           <svg className="inline mr-2 w-12 h-12 text-gray-200 animate-spin dark:text-gray-600 fill-red-700" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@ function MyApp({ Component, ...pageProps }) {
         </div>
         </div>
       <Component {...pageProps} />
-     </SessionProvider>
+     {/* </SessionProvider> */}
     </>
   );
 }

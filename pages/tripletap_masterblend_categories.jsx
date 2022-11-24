@@ -7,6 +7,7 @@ import Footer from "../src/Footer";
 import TripleTap_masterblend_cards from "../src/TripleTap_masterblend_cards";
 import Tripletap_masterblend_navbar from "../src/Tripletap_masterblend_navbar";
 import { wrapper } from "../store";
+import { sentDataRequest } from "../redux/home";
 
 export default function tripletap_masterblend_categories() {
   const dispatch = useDispatch();
@@ -33,11 +34,12 @@ const url = productData && JSON.stringify(productData[5]?.background_image);
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   await store.dispatch(sentProductRequest());
+  await store.dispatch(sentDataRequest());
 });

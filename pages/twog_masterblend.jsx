@@ -7,6 +7,7 @@ import { wrapper } from "../store";
 import { sentProductRequest } from "../redux/Products";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { sentDataRequest } from "../redux/home";
 export default function twog_masterblend() {
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -34,11 +35,12 @@ console.log(productData)
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   await store.dispatch(sentProductRequest());
+  await store.dispatch(sentDataRequest());
 });

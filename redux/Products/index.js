@@ -27,13 +27,19 @@ export const sentProductRequest = createAsyncThunk(
     }
   }
 );
-
 export const productDataSlice = createSlice({
   name: "productData",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
+
+
+
+
+
+
+
 
       
       console.log("HYDRATE", action.payload);

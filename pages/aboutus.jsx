@@ -73,7 +73,7 @@ console.log(response1);
         </div>
       </div>
       <div className="mt-[100px]">
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

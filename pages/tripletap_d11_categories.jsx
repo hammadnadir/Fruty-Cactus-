@@ -36,7 +36,7 @@ const url = productData && JSON.stringify(productData[3]?.background_image);
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

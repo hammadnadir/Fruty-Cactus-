@@ -12,6 +12,7 @@ import { wrapper } from "../store";
 import {sentProductRequest } from "../redux/Products";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { sentDataRequest } from "../redux/home";
 
 export default function twog_delta11_catergories() {
   const { productData } = useSelector((state) => state.Products);
@@ -41,11 +42,12 @@ const dispatch = useDispatch();
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   await store.dispatch(sentProductRequest());
+  await store.dispatch(sentDataRequest());
 });

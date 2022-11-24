@@ -8,6 +8,7 @@ import { wrapper } from "../store";
 import { sentProductRequest } from "../redux/Products";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { sentDataRequest } from "../redux/home";
 
 export default function twog_hhc_categories() {
   const {productData } = useSelector ((state)=>state.Products)
@@ -40,11 +41,12 @@ export default function twog_hhc_categories() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   await store.dispatch(sentProductRequest());
+  await store.dispatch(sentDataRequest());
 });

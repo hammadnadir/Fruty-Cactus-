@@ -7,6 +7,7 @@ import Footer from "../src/Footer";
 import Tripletap_hhc_cards from "../src/Tripletap_hhc_cards";
 import Tripletap_hhc_navbar from "../src/Tripletap_hhc_navbar";
 import { wrapper } from "../store";
+import { sentDataRequest } from "../redux/home";
 export default function tripletap_hhc_categories() {
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -33,11 +34,12 @@ const url = productData && JSON.stringify(productData[4]?.background_image);
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   await store.dispatch(sentProductRequest());
+  await store.dispatch(sentDataRequest());
 });

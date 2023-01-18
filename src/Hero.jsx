@@ -7,7 +7,7 @@ export default function Hero() {
 
   const { homeData } = useSelector((state) => state.home);
 
-  const url=homeData && homeData.banner.length > 0 && JSON.stringify(homeData.banner[0]?.background_image)
+  const url=homeData && homeData?.banner?.length > 0 && JSON.stringify(homeData.banner[0]?.background_image)
 
   return (
     <div className='backcard1 bg-cover    bg-no-repeat '  style={{backgroundImage: `url(${url})`}}>
@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="">
             <img
               className="sm:w-[350px] w-[300px] md:w-[500px] lg:w-[670px]"
-              src={homeData?.banner[0]?.product_images[0]}
+              src={homeData && homeData?.banner?.length > 0 && homeData?.banner[0]?.product_images[0]}
               alt="about-img"
             />
           </div>
@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="">
             <img
               className="sm:w-[350px] w-[300px] md:w-[500px] lg:w-[670px]"
-              src={homeData?.banner[0]?.product_images[1]}
+              src={homeData && homeData?.banner?.length > 0 && homeData?.banner[0]?.product_images[1]}
               alt="about-img"
             />
           </div>

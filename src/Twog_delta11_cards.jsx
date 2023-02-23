@@ -15,19 +15,25 @@ export default function Twog_delta11_cards() {
             {productData && productData[0]?.product_images?.map((items, index) => {
               return (
                 <div className="mt-[2px]   about" key={index}>
-                  <div className="card max-w-[300px] hover:scale-110 ease-in-out duration-700  transition shadow-black ">
-                    <img src={items.image} alt="about-img" />
+                  <div className="card max-w-[300px]">
+                    <img src={items.image} alt="about-img" className="hover:scale-110 ease-in-out duration-700  transition shadow-black " />
                     <p className="mt-[15px] font-bold text-[14px] md:text-[16px] text-black text-center ">
                       {items.title}
                     </p>
                     {/* <p className='mt-[10px] text-[11px] text-center  ' >{props.title}</p> */}
                   </div>
-                  <a href={items.cos} target="_blank"> 
-
-                    <div className="flex justify-center py-[5px]">
-                    <button className="px-6  py-[4px] bg-red-500 text-white text-[17px] rounded-md font-medium">cos</button>
+                  <div className="flex justify-center py-[5px] gap-[10px]">
+                      <a href={items.links === null ? `https://vapeandgummy.com/product-category/delta-11-live-resin/` : items.links}>
+                        <button className="px-6  py-[4px] bg-orange-600 text-white text-[17px] rounded-md font-medium">
+                          Buy Now
+                        </button>
+                      </a>
+                      <a href={items.cos} target="_blank">
+                        <button className="px-6  py-[4px] bg-green-600 text-white text-[17px] rounded-md font-medium">
+                          cos
+                        </button>
+                      </a>
                     </div>
-                  </a>
                 </div>
               );
             })}

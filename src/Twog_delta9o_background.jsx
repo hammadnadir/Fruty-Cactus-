@@ -10,7 +10,7 @@ function Twog_delta9o_background() {
   return (
     <div>
        <div
-           className="backcard4 mt-[-90px] bg-cover bg-no-repeat  relative"
+           className="backcard8 mt-[-90px] bg-cover bg-no-repeat  relative"
            style={{ backgroundImage: `url(${url})` }}
          >
             <Twog_delta9o/>

@@ -5,7 +5,7 @@ import { combinedReducer } from "../redux/rootReducer";
 import { createStore } from "@reduxjs/toolkit";
 import {store, wrapper} from "../store";
 import { ToastContainer } from "react-toastify";
-// import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 // import "bootstrap-icons/font/bootstrap-icons.css";
 import { useRouter } from "next/router";
 import { useEffect } from "react";

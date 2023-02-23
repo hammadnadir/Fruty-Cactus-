@@ -13,6 +13,8 @@ export default function Logo() {
   const [orange, setorange] = useState(false);
   const [blue, setBlue] = useState(false);
   const [greenend, setgreenend] = useState(false);
+  const [pink, setpink] = useState(false);
+  const [greenNew, setgreenNew] = useState(false);
   const [show, setShow] = useState(true);
 
   const dispatch = useDispatch();
@@ -27,13 +29,17 @@ export default function Logo() {
     ? "darkgreen"
     : lightblue
     ? "lightblue"
+    : greenNew
+    ? "greennew"
     : orange
     ? "orange"
     : blue
     ? "blue"
     : greenend
     ? "greenend"
-    : "";
+     : pink
+    ? "pink"
+    :  "";
 
   var backclass = greenif + maincl;
   const size = useWindowSize();
@@ -65,6 +71,11 @@ export default function Logo() {
       let backcard7 = document.querySelector(".backcard7");
       let rbackcard7 = backcard7.getBoundingClientRect();
 
+      let backcard8 = document.querySelector(".backcard8");
+      let rbackcard8 = backcard8.getBoundingClientRect();
+      // let backcard8 = document.querySelector(".backcard8");
+      // let rbackcard8 = backcard8.getBoundingClientRect();
+
       var threshold = 100;
       var xthreshold = 100;
 
@@ -91,16 +102,30 @@ export default function Logo() {
       } else if (rbackcard4.y <= xthreshold && rbackcard4.bottom > threshold) {
         setdarkgreen(false);
         setLightblue(true);
-      } else if (rbackcard5.y <= xthreshold && rbackcard5.bottom > threshold) {
+      }
+      else if (rbackcard8.y <= xthreshold && rbackcard8.bottom > threshold) {
         setLightblue(false);
+        setgreenNew(true);
+      }
+      else if (rbackcard5.y <= xthreshold && rbackcard5.bottom > threshold) {
+        setgreenNew(false);
         setorange(true);
       } else if (rbackcard6.y <= xthreshold && rbackcard6.bottom > threshold) {
         setorange(false);
         setBlue(true);
-      } else if (rbackcard6.bottom < threshold) {
+       }
+       else if (rbackcard7.y <= xthreshold && rbackcard7.bottom > threshold) {
         setBlue(false);
         setgreenend(true);
       }
+      // else if (rbackcard8.y <= xthreshold && rbackcard8.bottom > threshold) {
+      //   setLightblue(false);
+      //   setgreenNew(true);
+      // }
+      else if (rbackcard8.bottom < threshold) {
+        setgreenend(false);
+           setpink(true);
+        }
     }
   };
   useEffect(()=>{

@@ -50,7 +50,7 @@ export default function contact() {
   };
 const [data, setData]=useState([])
  const getdata =async () =>{
-const response = await fetch ("http://dev.biztekapps.com:8051/api/contact");
+const response = await fetch ("https://erp.frutycactus.com/public/api/contact");
 setData ( await response.json());
 console.log(response) 
 }

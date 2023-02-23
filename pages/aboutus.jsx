@@ -10,14 +10,14 @@ import { useEffect , useState } from "react";
 export default function aboutus() {
   const[data ,setData]= useState([]) 
 const getuser = async ()=>{
-  const response = await fetch("http://dev.biztekapps.com:8051/api/about")
+  const response = await fetch("https://erp.frutycactus.com/public/api/about")
 setData(await response.json())
 // console.log(data)
 
 }
 const [itemdata , setItemData]=useState([])
  const getdata = async ()=>{
-const response1 = await fetch("http://dev.biztekapps.com:8051/api/about-details")
+const response1 = await fetch("https://erp.frutycactus.com/public/api/about-details")
 setItemData(await response1.json())
 // console.log(response1);
  } 
